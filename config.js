@@ -17,7 +17,7 @@ const version = {
 
 
 
-let getVersion = async () =>{
+let getVersion = async function() {
     await wx2my.request({
         url: 'https://devapi.morefun.zone' + '/alipay/version?version=' + version.trial1,
         success: res => {
@@ -40,15 +40,15 @@ let getVersion = async () =>{
 }
 
 
-let getAuthKey =  async () =>{
-    // console.log("22执行了吗");
+let getAuthKey =  async function() {
     // my.alert({
-    //     title: '22执行了吗',
+    //     title: '执行了吗',
     // });
     let token = my.getStorageSync({key:'token'});
-    let token1 = token.data;
-    if (token1) {
-        console.log('token 1', token1)
+    let _token = token.data;
+
+    if (_token) {
+        console.log('token 1', _token)
         return
     }
     await my.getAuthCode({

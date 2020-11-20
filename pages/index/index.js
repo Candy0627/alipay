@@ -49,7 +49,6 @@ Page({
         //     })
         // })
 
-        getVersion();
         getAuthKey();
 
         this.getBannerList();

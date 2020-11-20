@@ -16,9 +16,10 @@ const tips = {
     4004: "请求地址错误",
     5000: "服务器错误"
 };
-import { config } from "../config.js";
+import { config,getVersion } from "../config.js";
 export class HTTP {
     request = async (params) =>  {
+        // request (params){
         console.log('res221',params);
         //url, data, method
         if (!params.method) {
@@ -38,8 +39,10 @@ export class HTTP {
             header['Authorization'] = 'Bearer ' + config.token;
         }
 
+        // getVersion();
+
         console.log('config.api_base_url',config.api_base_url);
-        // debugger
+
         await my.request({
             url: config.api_base_url + params.url,
             method: params.method,
