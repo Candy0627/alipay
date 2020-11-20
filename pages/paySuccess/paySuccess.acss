@@ -1,0 +1,52 @@
+/* required by usingComponents */
+.pay_container{
+    padding-top: 103rpx;
+    background: #fff;
+}
+.pay_success{
+    width: 545rpx;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 45rpx;
+}
+.pay_icon{
+    width: 197rpx;
+    height: 197rpx;
+    margin-bottom: 45rpx;
+}
+.text{
+    display: block;
+}
+.t_title{
+    color: #181818;
+    font-size: 47.36rpx;
+}
+.t_code{
+    margin-top: 38rpx;
+    margin-bottom: 22rpx;
+    color: #646464;
+    font-size: 28rpx;
+}
+.t_get{
+    color: #9b9b9b;
+    font-size: 26rpx;
+}
+.btn{
+    width: 545rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    text-align: center;
+    color: #ffffff;
+    font-size: 30rpx;
+    border-radius: 10rpx;
+}
+.btn_customer{
+    margin-top: 26rpx;
+    margin-bottom: 20rpx;
+    color: #fff;
+    background-color: #ffa019
+}
+.btn_orders{
+    color: #ffa019;
+    background-color: #f8f8f8
+}

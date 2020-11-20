@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>小程序转换结果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        color: #333;
+        font-family: serif;
+      }
+      .wrapper {
+        width: 960px;
+        margin: 0 auto;
+      }
+      
+      h1 {
+        text-align: center;
+      }
+      .statistical {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      details.page {
+        border: 1px solid #CCC;
+        padding: 0 20px 20px;
+        background-color: rgba(165, 165, 165, 0.5);
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      
+      details.page summary {
+        font-size: 20px;
+        cursor: pointer;
+        outline: none;
+        border-radius: 10px 10px 0 0;
+        background: #3d68b3;
+        color: #FFF;
+        padding: 10px;
+        margin: 0 -20px 10px;
+        top: 0;
+        z-index: 1;
+      }
+      
+      .page-wrapper {
+        
+      }
+      
+      .page-title{
+        font-size: 18px;
+        margin-top: 20px;
+        background-color: #a2510bbf;
+        padding: 10px;
+        color: #FFF;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
+      }
+      
+      .report-list {
+        font-size: 16px;
+        line-height: 1.6em;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .report-list li {
+        position: relative;
+        overflow: hidden;
+        background-color: #c1f35e;
+        padding: 10px 15px;
+        box-shadow: 0 3px 5px #CCC;
+        box-sizing: border-box;
+        transition: transform 0.2s;
+      }
+      .report-list li ~ li{
+        border-top: 2px solid #a86c3d;
+        border-radius: none;
+      }
+      
+      .report-list li:last-child{
+        border-radius: 0 0 10px 10px;
+      }
+      
+      .report-list li:hover {
+        transform: translate(5px , 0);
+      }
+      .report-list li.error {
+        background: linear-gradient(to right, #ff6a6a, white);
+      }
+      .report-list li.warn {
+        background: linear-gradient(to right, #efd243, white);
+      }
+      .report-list li.normal {
+        background: linear-gradient(to right, #46ea71, white);
+      }
+      .report-list li.checked {
+        opacity: 0.6;
+      }
+      .report-list li .key {
+        display: inline-block;
+        width: 50px;
+        color: #555;
+        text-align: justify;
+      }
+      .report-list li .level {
+        font-size: 14px;
+        position: absolute;
+        top: -9px;
+        right: -30px;
+        transform: rotate(45deg);
+        background-color: #ff6a6a;
+        color: #FFF;
+        padding: 20px 30px 2px;
+        box-shadow: 0 2px 5px #ccc;
+      }
+      
+      .report-list li.warn .level {
+        font-size: 14px;
+        position: absolute;
+        top: -9px;
+        right: -30px;
+        transform: rotate(45deg);
+        background-color: #eab41a;
+        color: #FFF;
+        padding: 20px 30px 2px;
+        box-shadow: 0 2px 5px #ccc;
+      }
+      
+      .report-list li a {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      .item-number {
+        position: absolute;
+        font-size: 180px;
+        right: 20px;
+        opacity: 0.08;
+        top: 50%;
+        line-height: 1;
+        transform: translateY(-50%);
+      }
+      .item-name {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .report-list li .item-name .key {
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>转换结果报告</h1>
+      <div class="statistical"><span>严重问题（72个）</span><span>一般问题（111个）</span></div>
+      <details class="page" open="open">
+        <summary>App</summary>
+        <div class="page-wrapper">
+          <div class="page-title">app.json</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">1</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: navigationBarTextStyle</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#window" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">navigationBarTextStyle: 支付宝小程序不支持navigationBarTextStyle功能，请手动修改代码！</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">2</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: backgroundTextStyle</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#window" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">backgroundTextStyle: 支付宝小程序不支持backgroundTextStyle功能，请手动修改代码！</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">3</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: borderStyle</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#tabbar" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">borderStyle: 支付宝小程序不支持borderStyle功能，请手动修改代码！</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">4</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: custom</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#tabbar" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">custom: 支付宝小程序不支持custom功能，请手动修改代码！</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">5</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: debug</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#debug" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">debug: 支付宝小程序不支持debug功能，请手动修改代码！</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">app.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">6</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">setStorageSync</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-name98npduamysetstoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:21, 列:5)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                    </div>
+                  </li>
+                  <li class="warn"><span class="item-number">7</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                    <div class="level"><span class="value">一般</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:22, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">app.json</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">8</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: navigationBarTextStyle</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#window" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">navigationBarTextStyle: 支付宝小程序不支持navigationBarTextStyle功能，请手动修改代码！</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">9</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: backgroundTextStyle</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#window" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">backgroundTextStyle: 支付宝小程序不支持backgroundTextStyle功能，请手动修改代码！</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">10</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: borderStyle</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#tabbar" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">borderStyle: 支付宝小程序不支持borderStyle功能，请手动修改代码！</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">11</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: custom</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#tabbar" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">custom: 支付宝小程序不支持custom功能，请手动修改代码！</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">12</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: debug</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#debug" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">debug: 支付宝小程序不支持debug功能，请手动修改代码！</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">app.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">13</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">setStorageSync</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-name98npduamysetstoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:21, 列:5)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                    </div>
+                  </li>
+                  <li class="warn"><span class="item-number">14</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                    <div class="level"><span class="value">一般</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:22, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+      </details>
+      <details class="page" open="open">
+        <summary>Pages</summary>
+        <details class="page" open="open">
+          <summary>pages\index\index</summary>
+          <div class="page-wrapper">
+            <div class="page-title">index.json</div>
+                  <ol class="report-list">
+                    <li class="error"><span class="item-number">15</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: backgroundTextStyle</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#window" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">backgroundTextStyle: 支付宝小程序不支持backgroundTextStyle功能，请手动修改代码！</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+          <div class="page-wrapper">
+            <div class="page-title">index.js</div>
+                  <ol class="report-list">
+                    <li class="error"><span class="item-number">16</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">setBackgroundTextStyle</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setBackgroundTextStyle.html" target="_content">微信</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:38, 列:5)  </span><span class="value">wx.setBackgroundTextStyle() 目前不支持，请考虑其他方案或移除相应功能</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">17</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">setBackgroundColor</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setBackgroundColor.html" target="_content">微信</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:42, 列:5)  </span><span class="value">wx.setBackgroundColor() 目前不支持，请考虑其他方案或移除相应功能</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">18</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:164, 列:17)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">19</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:172, 列:5)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">20</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:205, 列:17)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">21</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:213, 列:5)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">22</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">requestPayment</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.requestPayment.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/introduce/pay" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:231, 列:8)  </span><span class="value"></span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">23</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:275, 列:17)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">24</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:284, 列:5)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">25</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">stopPullDownRefresh</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.stopPullDownRefresh.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-pulldown#mystoppulldownrefresh" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:58, 列:6)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">26</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:62, 列:5)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">27</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:67, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">28</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:135, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">29</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">stopPullDownRefresh</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.stopPullDownRefresh.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-pulldown#mystoppulldownrefresh" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:137, 列:9)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">30</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:158, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">31</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:182, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">32</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:186, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">33</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:187, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">34</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:195, 列:7)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">35</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:242, 列:10)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">36</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:253, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">37</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:270, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">38</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:293, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">39</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:300, 列:9)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">40</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:304, 列:9)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">41</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:309, 列:9)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">42</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:316, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">43</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:317, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">44</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:322, 列:8)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">45</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:328, 列:7)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">46</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:339, 列:5)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">47</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:351, 列:6)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+          <div class="page-wrapper">
+            <div class="page-title">index.json</div>
+                  <ol class="report-list">
+                    <li class="error"><span class="item-number">48</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">app.json: backgroundTextStyle</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#window" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">backgroundTextStyle: 支付宝小程序不支持backgroundTextStyle功能，请手动修改代码！</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+          <div class="page-wrapper">
+            <div class="page-title">index.js</div>
+                  <ol class="report-list">
+                    <li class="error"><span class="item-number">49</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">setBackgroundTextStyle</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setBackgroundTextStyle.html" target="_content">微信</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:38, 列:5)  </span><span class="value">wx.setBackgroundTextStyle() 目前不支持，请考虑其他方案或移除相应功能</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">50</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">setBackgroundColor</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setBackgroundColor.html" target="_content">微信</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:42, 列:5)  </span><span class="value">wx.setBackgroundColor() 目前不支持，请考虑其他方案或移除相应功能</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">51</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:164, 列:17)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">52</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:172, 列:5)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">53</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:205, 列:17)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">54</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:213, 列:5)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">55</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">requestPayment</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.requestPayment.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/introduce/pay" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:231, 列:8)  </span><span class="value"></span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">56</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:275, 列:17)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">57</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:284, 列:5)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">58</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">stopPullDownRefresh</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.stopPullDownRefresh.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-pulldown#mystoppulldownrefresh" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:58, 列:6)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">59</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:62, 列:5)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">60</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:67, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">61</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:135, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">62</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">stopPullDownRefresh</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.stopPullDownRefresh.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-pulldown#mystoppulldownrefresh" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:137, 列:9)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">63</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:158, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">64</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:182, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">65</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:186, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">66</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:187, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">67</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:195, 列:7)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">68</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:242, 列:10)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">69</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:253, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">70</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:270, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">71</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:293, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">72</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:300, 列:9)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">73</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:304, 列:9)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">74</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:309, 列:9)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">75</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:316, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">76</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:317, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">77</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:322, 列:8)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">78</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:328, 列:7)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">79</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:339, 列:5)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">80</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">navigateTo</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateTo.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name730dvoamynavigateto" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:351, 列:6)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+        </details>
+        <details class="page" open="open">
+          <summary>pages\logs\logs</summary>
+          <div class="page-wrapper">
+            <div class="page-title">logs.js</div>
+                  <ol class="report-list">
+                    <li class="error"><span class="item-number">81</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:10, 列:16)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+          <div class="page-wrapper">
+            <div class="page-title">logs.js</div>
+                  <ol class="report-list">
+                    <li class="error"><span class="item-number">82</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:10, 列:16)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+        </details>
+        <details class="page" open="open">
+          <summary>pages\orders\orders</summary>
+          <div class="page-wrapper">
+            <div class="page-title">orders.js</div>
+                  <ol class="report-list">
+                    <li class="error"><span class="item-number">83</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">setBackgroundTextStyle</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setBackgroundTextStyle.html" target="_content">微信</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:62, 列:5)  </span><span class="value">wx.setBackgroundTextStyle() 目前不支持，请考虑其他方案或移除相应功能</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">84</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">setBackgroundColor</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setBackgroundColor.html" target="_content">微信</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:66, 列:5)  </span><span class="value">wx.setBackgroundColor() 目前不支持，请考虑其他方案或移除相应功能</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">85</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:26, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">86</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:92, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">87</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">stopPullDownRefresh</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.stopPullDownRefresh.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-pulldown#mystoppulldownrefresh" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:97, 列:9)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">88</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">setClipboardData</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setClipboardData.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/clipboard" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:130, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数及返回值有差别，请检查</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">89</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getClipboardData</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.getClipboardData.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/clipboard" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:133, 列:7)  </span><span class="value">使用了 wx.js 桥接，参数及返回值有差别，请检查</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+          <div class="page-wrapper">
+            <div class="page-title">orders.js</div>
+                  <ol class="report-list">
+                    <li class="error"><span class="item-number">90</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">setBackgroundTextStyle</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setBackgroundTextStyle.html" target="_content">微信</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:62, 列:5)  </span><span class="value">wx.setBackgroundTextStyle() 目前不支持，请考虑其他方案或移除相应功能</span>
+                      </div>
+                    </li>
+                    <li class="error"><span class="item-number">91</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">setBackgroundColor</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setBackgroundColor.html" target="_content">微信</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:66, 列:5)  </span><span class="value">wx.setBackgroundColor() 目前不支持，请考虑其他方案或移除相应功能</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">92</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:26, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">93</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:92, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">94</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">stopPullDownRefresh</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.stopPullDownRefresh.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-pulldown#mystoppulldownrefresh" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:97, 列:9)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">95</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">setClipboardData</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setClipboardData.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/clipboard" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:130, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数及返回值有差别，请检查</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">96</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getClipboardData</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.getClipboardData.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/clipboard" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:133, 列:7)  </span><span class="value">使用了 wx.js 桥接，参数及返回值有差别，请检查</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+        </details>
+        <details class="page" open="open">
+          <summary>pages\customer\customer</summary>
+          <div class="page-wrapper">
+            <div class="page-title">customer.js</div>
+                  <ol class="report-list">
+                    <li class="error"><span class="item-number">97</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:36, 列:17)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">98</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:19, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">99</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:51, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+          <div class="page-wrapper">
+            <div class="page-title">customer.js</div>
+                  <ol class="report-list">
+                    <li class="error"><span class="item-number">100</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                      <div class="level"><span class="value">严重</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:36, 列:17)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">101</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">showToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.showToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-name49omqpamyshowtoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:19, 列:5)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查: 1. type 值无loading 2. 不支持image、mask</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">102</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">hideToast</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.hideToast.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-feedback#a-namewldwkiamyhidetoast" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:51, 列:8)  </span><span class="value">使用了 wx.js 桥接，参数有差别，请检查：1. 不支持success、fail、complete</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+        </details>
+        <details class="page" open="open">
+          <summary>pages\paySuccess\paySuccess</summary>
+          <div class="page-wrapper">
+            <div class="page-title">paySuccess.js</div>
+                  <ol class="report-list">
+                    <li class="warn"><span class="item-number">103</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">reLaunch</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.reLaunch.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name5zuhhgamyrelaunch" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:15, 列:5)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">104</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">reLaunch</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.reLaunch.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name5zuhhgamyrelaunch" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:21, 列:5)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+          <div class="page-wrapper">
+            <div class="page-title">paySuccess.js</div>
+                  <ol class="report-list">
+                    <li class="warn"><span class="item-number">105</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">reLaunch</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.reLaunch.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name5zuhhgamyrelaunch" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:15, 列:5)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                    <li class="warn"><span class="item-number">106</span>
+                      <div class="item-name"><span class="key">API/组件：</span><span class="value">reLaunch</span></div>
+                      <div class="level"><span class="value">一般</span></div>
+                      <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.reLaunch.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-navigate#a-name5zuhhgamyrelaunch" target="_content" style="margin-left:10px">支付宝</a>
+                      </div>
+                      <div><span class="key">提示：</span><span class="value">(行:21, 列:5)  </span><span class="value">无</span>
+                      </div>
+                    </li>
+                  </ol>
+          </div>
+        </details>
+      </details>
+      <details class="page" open="open">
+        <summary>Components</summary>
+      </details>
+      <details class="page" open="open">
+        <summary>其他</summary>
+        <div class="page-wrapper">
+          <div class="page-title">config.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">107</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:1, 列:15)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">108</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:11, 列:3)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">109</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">login</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.login.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/introduce/auth" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:29, 列:3)  </span><span class="value">不兼容，支付宝小程序只需要授权处理</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">110</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:32, 列:5)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">111</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">setStorageSync</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-name98npduamysetstoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:41, 列:8)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">utils.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">112</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">getSystemInfoSync</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.canIUse.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/can-i-use" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:22, 列:24)  </span><span class="value">返回值有差别,请查看：1.statusBarHeight,benchmarkLevel,SDKVersion支付宝不支持。2.version,app微信不支持</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">link.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">113</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value"></span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:13, 列:19)  </span><span class="value">未知api</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">safe-area.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">114</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">getSystemInfo</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.canIUse.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/can-i-use" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:8, 列:15)  </span><span class="value">返回值有差别,请查看：1.statusBarHeight,benchmarkLevel,SDKVersion支付宝不支持。2.version,app微信不支持</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">index.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">115</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">getSystemInfoSync</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.canIUse.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/can-i-use" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:275, 列:40)  </span><span class="value">返回值有差别,请查看：1.statusBarHeight,benchmarkLevel,SDKVersion支付宝不支持。2.version,app微信不支持</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">http.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">116</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:35, 列:11)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">config.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">117</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">getStorageSync</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-namegnaxxgamyremovestoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:1, 列:15)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">118</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:11, 列:3)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">119</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">login</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.login.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/introduce/auth" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:29, 列:3)  </span><span class="value">不兼容，支付宝小程序只需要授权处理</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">120</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:32, 列:5)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                    </div>
+                  </li>
+                  <li class="error"><span class="item-number">121</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">setStorageSync</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.setStorageSync.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/storage#a-name98npduamysetstoragesync" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:41, 列:8)  </span><span class="value">支付宝需要使用Map形式，请注意入参</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">utils.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">122</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">getSystemInfoSync</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.canIUse.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/can-i-use" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:22, 列:24)  </span><span class="value">返回值有差别,请查看：1.statusBarHeight,benchmarkLevel,SDKVersion支付宝不支持。2.version,app微信不支持</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">link.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">123</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value"></span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:13, 列:19)  </span><span class="value">未知api</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">safe-area.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">124</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">getSystemInfo</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.canIUse.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/can-i-use" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:8, 列:15)  </span><span class="value">返回值有差别,请查看：1.statusBarHeight,benchmarkLevel,SDKVersion支付宝不支持。2.version,app微信不支持</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">index.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">125</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">getSystemInfoSync</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.canIUse.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/can-i-use" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:275, 列:40)  </span><span class="value">返回值有差别,请查看：1.statusBarHeight,benchmarkLevel,SDKVersion支付宝不支持。2.version,app微信不支持</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">http.js</div>
+                <ol class="report-list">
+                  <li class="error"><span class="item-number">126</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">request</span></div>
+                    <div class="level"><span class="value">严重</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.request.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/network#myrequest" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:35, 列:11)  </span><span class="value">参数及方法有差别，请检查：1. responseType[wx支持版本1.7.0] 参数不被支持 2. data字段必须为object类型 3. method仅支持GET、POST，3. 不支持abort方法，4. 不支持RequestTask</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">index.js</div>
+                <ol class="report-list">
+                  <li class="warn"><span class="item-number">127</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">switchTab</span></div>
+                    <div class="level"><span class="value">一般</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.switchTab.html" target="_content">微信</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:47, 列:6)  </span><span class="value">无</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">basic.js</div>
+                <ol class="report-list">
+                  <li class="warn"><span class="item-number">128</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">createSelectorQuery</span></div>
+                    <div class="level"><span class="value">一般</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.createSelectorQuery.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/selector-query" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:8, 列:19)  </span><span class="value">转换成功，实例对应的api部分存在差异，以实际情况为准</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">index.js</div>
+                <ol class="report-list">
+                  <li class="warn"><span class="item-number">129</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">createAnimation</span></div>
+                    <div class="level"><span class="value">一般</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.createAnimation.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-animation#a-namen93ndhamycreateanimation" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:57, 列:33)  </span><span class="value">使用了 wx.js 桥接，参数有差别</span>
+                    </div>
+                  </li>
+                  <li class="warn"><span class="item-number">130</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">createAnimation</span></div>
+                    <div class="level"><span class="value">一般</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.createAnimation.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-animation#a-namen93ndhamycreateanimation" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:84, 列:40)  </span><span class="value">使用了 wx.js 桥接，参数有差别</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">index.js</div>
+                <ol class="report-list">
+                  <li class="warn"><span class="item-number">131</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">switchTab</span></div>
+                    <div class="level"><span class="value">一般</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.switchTab.html" target="_content">微信</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:47, 列:6)  </span><span class="value">无</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">basic.js</div>
+                <ol class="report-list">
+                  <li class="warn"><span class="item-number">132</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">createSelectorQuery</span></div>
+                    <div class="level"><span class="value">一般</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.createSelectorQuery.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/selector-query" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:8, 列:19)  </span><span class="value">转换成功，实例对应的api部分存在差异，以实际情况为准</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-title">index.js</div>
+                <ol class="report-list">
+                  <li class="warn"><span class="item-number">133</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">createAnimation</span></div>
+                    <div class="level"><span class="value">一般</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.createAnimation.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-animation#a-namen93ndhamycreateanimation" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:57, 列:33)  </span><span class="value">使用了 wx.js 桥接，参数有差别</span>
+                    </div>
+                  </li>
+                  <li class="warn"><span class="item-number">134</span>
+                    <div class="item-name"><span class="key">API/组件：</span><span class="value">createAnimation</span></div>
+                    <div class="level"><span class="value">一般</span></div>
+                    <div><span class="key">文档：</span><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wx.createAnimation.html" target="_content">微信</a><a href="https://docs.alipay.com/mini/api/ui-animation#a-namen93ndhamycreateanimation" target="_content" style="margin-left:10px">支付宝</a>
+                    </div>
+                    <div><span class="key">提示：</span><span class="value">(行:84, 列:40)  </span><span class="value">使用了 wx.js 桥接，参数有差别</span>
+                    </div>
+                  </li>
+                </ol>
+        </div>
+      </details>
+    </div>
+    <script>
+      document.querySelectorAll('.report-list').forEach((list) => {
+        list.onclick = (e) => {
+          if (e.target.tagName === 'A') {return};
+          e.target.closest('li').classList.toggle('checked');
+        }
+      })
+    </script>
+  </body>
+</html>

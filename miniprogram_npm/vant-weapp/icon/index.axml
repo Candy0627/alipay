@@ -1,0 +1,18 @@
+<import-sjs from="../wxs/utils.sjs" name="utils"/>
+<view
+  class="custom-class {{ classPrefix }} {{ utils.isSrc(name) ? 'van-icon--image' : classPrefix + '-' + name }}"
+  style="{{ color ? 'color: ' + color + ';' : '' }}{{ size ? 'font-size: ' + size + ';' : '' }}{{ customStyle }}"
+  onTap="onClick"
+>
+  <van-info
+    a:if="{{ info !== null }}"
+    info="{{ info }}"
+    custom-class="van-icon__info"
+  />
+  <image
+    a:if="{{ utils.isSrc(name) }}"
+    src="{{ name }}"
+    mode="aspectFit"
+    class="van-icon__image"
+  />
+</view>

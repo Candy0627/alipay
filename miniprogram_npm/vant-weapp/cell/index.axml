@@ -1,0 +1,36 @@
+<import-sjs from="../wxs/utils.sjs" name="utils"/>
+<view
+  class="custom-class {{ utils.bem('cell', [size, { center, required, borderless: !border, clickable: isLink || clickable }]) }}"
+  hover-class="van-cell--hover hover-class"
+  hover-stay-time="70"
+  style="{{ customStyle }}"
+  onTap="onClick"
+>
+  <van-icon
+    a:if="{{ icon }}"
+    name="{{ icon }}"
+    class="van-cell__left-icon-wrap"
+    custom-class="van-cell__left-icon"
+  />
+  <slot a:else name="icon"/>
+  <view style="{{ titleWidth ? 'max-width:' + titleWidth + ';min-width:' + titleWidth : '' }}" class="van-cell__title title-class">
+    <block a:if="{{ title }}">{{ title }}</block>
+    <slot a:else name="title"/>
+    <view a:if="{{ label || useLabelSlot }}" class="van-cell__label label-class">
+      <slot a:if="{{ useLabelSlot }}" name="label"/>
+      <block a:elif="{{ label }}">{{ label }}</block>
+    </view>
+  </view>
+  <view class="van-cell__value value-class">
+    <block a:if="{{ value || value === 0 }}">{{ value }}</block>
+    <slot a:else/>
+  </view>
+  <van-icon
+    a:if="{{ isLink }}"
+    name="{{ arrowDirection ? 'arrow' + '-' + arrowDirection : 'arrow' }}"
+    class="van-cell__right-icon-wrap right-icon-class"
+    custom-class="van-cell__right-icon"
+  />
+  <slot a:else name="right-icon"/>
+  <slot name="extra"/>
+</view>

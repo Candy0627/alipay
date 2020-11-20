@@ -1,0 +1,8 @@
+/**app.wxss**/
+@import '/static/css/mb.acss';
+/* @import '/static/css/iconfont.acss'; */
+page{
+  height: 100%;
+  font-family: "Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  background: #eaeced;
+}

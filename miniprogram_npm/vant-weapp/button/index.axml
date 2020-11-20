@@ -1,0 +1,48 @@
+<import-sjs from="../wxs/utils.sjs" name="utils"/>
+<!-- WX2MY: 属性aria-label不被支持，请调整。 -->
+<button
+  id="{{ id }}"
+  class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }}"
+  open-type="{{ openType }}"
+  hover-class="van-button--active hover-class"
+  style="{{ color ? 'border-color: ' + color + ';' + (plain ? 'color: ' + color : 'color: #fff; background-color: ' + color) : '' }}"
+  lang="{{ lang }}"
+  business-id="{{ businessId }}"
+  session-from="{{ sessionFrom }}"
+  send-message-title="{{ sendMessageTitle }}"
+  send-message-path="{{ sendMessagePath }}"
+  send-message-img="{{ sendMessageImg }}"
+  show-message-card="{{ showMessageCard }}"
+  app-parameter="{{ appParameter }}"
+  aria-label="{{ ariaLabel }}"
+  onTap="onClick"
+  bindgetuserinfo="bindGetUserInfo"
+  bindcontact="bindContact"
+  bindgetphonenumber="bindGetPhoneNumber"
+  binderror="bindError"
+  bindlaunchapp="bindLaunchApp"
+  bindopensetting="bindOpenSetting"
+>
+  <block a:if="{{ loading }}">
+    <van-loading
+      custom-class="loading-class"
+      size="{{ loadingSize }}"
+      color="{{ type === 'default' ? '#c9c9c9' : '' }}"
+    />
+    <view a:if="{{ loadingText }}" class="van-button__loading-text">
+      {{ loadingText }}
+    </view>
+  </block>
+  <block a:else>
+    <van-icon
+      a:if="{{ icon }}"
+      size="1.2em"
+      name="{{ icon }}"
+      class="van-button__icon"
+      custom-style="line-height: inherit;"
+    />
+    <view class="van-button__text">
+      <slot/>
+    </view>
+  </block>
+</button>

@@ -1,0 +1,44 @@
+<view class="container">
+    <swiper a:if="{{bannerList.length > 0}}"
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}"
+        interval="{{interval}}"
+        duration="{{duration}}"
+        class="swiper-box" id="top"
+        indicator-color="{{beforeColor}}"
+        indicator-active-color="{{afterColor}}"
+    >
+        <block a:for="{{bannerList}}" a:key="index">
+            <swiper-item>
+                <image class="slide-image" src="{{item.img_url}}" data-url="{{item.jump_link}}" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="list-view" a:if="goodsList.length>0" a:key="index">
+        <view class="list-box" a:for="{{goodsList}}" a:for-item="list" a:key="index" data-id="{{list.id}}">
+            <view class="list-images">
+                <image src="{{list.goods_img}}"/>
+            </view>
+            <view class="list-text">
+                <text class="name ep-one">{{list.name}}</text>
+                <text class="type ep-one">{{list.desc}}</text>
+                <view class="text">
+                    <text class="price">￥{{list.cny_price}}</text>
+                    <view class="button" a:if="{{list.is_buy === true }}" data-index="{{index}}" data-id="{{list.id}}" onTap="handleClickBuy">购买</view>
+                    <view class="button gray" a:else>已售罄</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- WX2MY: 属性hidden不被支持，请调整 -->
+    <view class="loading noOrder" hidden="{{!noData}}">
+        <view>
+            <image src="../../static/images/no-order.png" class="nobuy"></image>
+        </view>
+        <view class="tipsText">您还没有下单哦</view>
+    </view>
+    <!-- WX2MY: 属性hidden不被支持，请调整 -->
+    <view class="loading tipsText" hidden="{{!loadingMore}}">正在加载更多...</view>
+    <!-- WX2MY: 属性hidden不被支持，请调整 -->
+    <view class="loading complete tipsText" hidden="{{!loadingMoreComplete}}">— 已加载全部 —</view>
+</view>

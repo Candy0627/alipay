@@ -1,0 +1,123 @@
+/* required by usingComponents */
+.container{
+    padding-bottom: 2%;
+    background: #eaeced;
+}
+/*list-box*/
+.list-view {
+    padding-top: 20rpx;
+}
+
+.list-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 695rpx;
+    /* height: 231rpx; */
+    margin: 0 auto;
+    padding: 15rpx;
+    margin-top: 18rpx;
+    border: 1px solid #edeef0;
+    background: #fff;
+    /* box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); */
+}
+
+.list-images {
+    margin-right: 30rpx;
+    margin-left: 10rpx;
+}
+
+.list-images image {
+    width: 170rpx;
+    height: 170rpx;
+    border-radius: 20rpx;
+}
+
+.list-text {
+    font-size: 14px;
+    color: #666666;
+}
+
+.list-text .name {
+    display: block;
+    width: 500rpx;
+    color: #181818;
+    font-size: 32rpx;
+}
+
+.list-text .type {
+    display: block;
+    width: 500rpx;
+    padding: 10rpx 0 20rpx 0;
+    color: #9b9b9b;
+    font-size: 26rpx;
+}
+
+.list-text .txt {
+    padding: 5px;
+    color: #aaaaaa;
+
+}
+
+.list-text .price {
+    font-size: 30rpx;
+    color: #181818;
+}
+
+.button {
+    float: right;
+    width: 139rpx;
+    height: 58rpx;
+    line-height: 58rpx;
+    border-radius: 6rpx;
+    font-size: 30rpx;
+    color: #ffff;
+    text-align: center;
+    background-color: #ffa019;
+}
+
+.orange {
+    font-size: 80rpx
+}
+
+.gray {
+    background-color: #959595;
+}
+
+.iconfont {
+    position: absolute;
+    right: 65rpx;
+    bottom: 55rpx;
+}
+.nobuy{
+    width: 450rpx;
+    height: 450rpx;
+}
+.iconfont_vx{
+    position: absolute;
+    right: 20rpx;
+    bottom: 48rpx;
+    z-index: 116;
+    width: 140rpx;
+    height: 140rpx;
+}
+.loading{
+    width: 100%;
+    text-align: center;
+    font-size: 22rpx;
+    margin-top: 10rpx;
+    color:#666666
+}
+.noOrder{
+    margin: 69rpx auto;
+    text-align: center;
+    font-size: 34rpx;
+}
+.tipsText{
+    display: block;
+    text-align: center;
+    color:#9b9b9b
+}
+.addLine{
+    text-decoration: underline;
+}

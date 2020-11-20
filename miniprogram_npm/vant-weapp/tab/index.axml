@@ -1,0 +1,8 @@
+<import-sjs from="../wxs/utils.sjs" name="utils"/>
+<view
+  a:if="{{ animated || inited }}"
+  class="custom-class {{ utils.bem('tab__pane', { active, inactive: !active }) }}"
+  style="{{ animated || active ? '' : 'display: none;' }} {{ width ? 'width:' + width + 'px;' : '' }}"
+>
+  <slot/>
+</view>

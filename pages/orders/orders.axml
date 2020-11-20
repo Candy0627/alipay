@@ -1,0 +1,52 @@
+<view class="container">
+  <!-- 商品订单 -->
+  <view class="list-view" a:if="orderList.length>0">
+    <view
+      class="list-box"
+      a:for="{{orderList}}"
+      a:for-item="list"
+      a:key="index"
+      data-id="index"
+    >
+      <view class="list-images">
+        <image src="{{list.goods_img}}"/>
+      </view>
+      <view class="list-text">
+        <text class="name ep-one">{{list.name}}</text>
+        <text class="type ep-one" a:if="{{list.exchange_time}}">兑换日期：{{list.exchange_time}}</text>
+        <text class="type ep-one" a:else>请联系客服进行兑换</text>
+        <view class="text">
+          <text
+            class="price"
+            data-id="{{list.cdk}}"
+            onTap="handleCopy"
+          >兑换码: <text class="addLine">{{list.cdk}}</text>
+          </text>
+        </view>
+        <!-- <icon class="iconfont icon-weiduihuan" wx:if="{{list.exchange_status == false}}"></icon>
+				<icon class="iconfont icon-yiduihuan" wx:else></icon> -->
+        <image
+          src="../../static/images/no-use.png"
+          class="iconfont_vx"
+          a:if="{{list.exchange_status == false}}"
+        ></image>
+        <image
+          src="../../static/images/used.png"
+          class="iconfont_vx"
+          a:else
+        ></image>
+      </view>
+    </view>
+  </view>
+  <!-- WX2MY: 属性hidden不被支持，请调整 -->
+  <view class="loading noOrder" hidden="{{!noData}}">
+    <view>
+      <image src="../../static/images/no-order.png" class="nobuy"></image>
+    </view>
+    <view class="tipsText">您还没有下单哦</view>
+  </view>
+  <!-- WX2MY: 属性hidden不被支持，请调整 -->
+  <view class="loading tipsText" hidden="{{!loadingMore}}">正在加载更多...</view>
+  <!-- WX2MY: 属性hidden不被支持，请调整 -->
+  <view class="loading complete tipsText" hidden="{{!loadingMoreComplete}}">—  已加载全部  —</view>
+</view>

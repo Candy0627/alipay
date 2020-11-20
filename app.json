@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/orders/orders",
+    "pages/customer/customer",
+    "pages/paySuccess/paySuccess",
+    "pages/out/out"
+  ],
+  "tabBar": {
+    "selectedColor": "#ffa019",
+    "backgroundColor": "#ffffff",
+    "textColor": "#999",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "icon": "static/images/home_g.png",
+        "activeIcon": "static/images/home_o.png",
+        "name": "首页"
+      },
+      {
+        "pagePath": "pages/customer/customer",
+        "icon": "static/images/cust_g.png",
+        "activeIcon": "static/images/cust_o.png",
+        "name": "联系客服"
+      },
+      {
+        "pagePath": "pages/orders/orders",
+        "icon": "static/images/order_g.png",
+        "activeIcon": "static/images/order_o.png",
+        "name": "我的订单"
+      }
+    ]
+  },
+  "window": {
+    "defaultTitle": "魔豆中心",
+    "titleBarColor": "#ffffff"
+  },
+  "sitemapLocation": "sitemap.json"
+}

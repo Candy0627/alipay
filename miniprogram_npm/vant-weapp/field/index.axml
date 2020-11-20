@@ -1,0 +1,89 @@
+<import-sjs from="../wxs/utils.sjs" name="utils"/>
+<van-cell
+  icon="{{ leftIcon }}"
+  title="{{ label }}"
+  center="{{ center }}"
+  border="{{ border }}"
+  is-link="{{ isLink }}"
+  required="{{ required }}"
+  custom-style="{{ customStyle }}"
+  title-width="{{ titleWidth }}"
+  custom-class="van-field"
+  size="{{ size }}"
+>
+  <slot name="left-icon" slot="icon"/>
+  <slot name="label" slot="title"/>
+  <view class="{{ utils.bem('field__body', [type, system]) }}">
+    <!-- WX2MY: 属性fixed、cursor-spacing、show-confirm-bar、selection-start、selection-end、adjust-position不被支持，请调整。 -->
+    <textarea
+      a:if="{{ type === 'textarea' }}"
+      class="input-class {{ utils.bem('field__input', [inputAlign, type, { disabled, error }]) }}"
+      fixed="{{ fixed }}"
+      focus="{{ focus }}"
+      value="{{ value }}"
+      disabled="{{ disabled || readonly }}"
+      maxlength="{{ maxlength }}"
+      placeholder="{{ placeholder }}"
+      placeholder-style="{{ placeholderStyle }}"
+      placeholder-class="{{ utils.bem('field__placeholder', { error }) }}"
+      auto-height="{{ autosize }}"
+      cursor-spacing="{{ cursorSpacing }}"
+      adjust-position="{{ adjustPosition }}"
+      show-confirm-bar="{{ showConfirmBar }}"
+      selection-end="{{ selectionEnd }}"
+      selection-start="{{ selectionStart }}"
+      onInput="onInput"
+      onBlur="onBlur"
+      onFocus="onFocus"
+      onConfirm="onConfirm"
+    ></textarea>
+    <!-- WX2MY: 属性cursor-spacing、adjust-position不被支持，请调整。 -->
+    <input
+      a:else
+      class="input-class {{ utils.bem('field__input', [inputAlign, { disabled, error }]) }}"
+      type="{{ type }}"
+      focus="{{ focus }}"
+      value="{{ value }}"
+      disabled="{{ disabled || readonly }}"
+      maxlength="{{ maxlength }}"
+      placeholder="{{ placeholder }}"
+      placeholder-style="{{ placeholderStyle }}"
+      placeholder-class="{{ utils.bem('field__placeholder', { error }) }}"
+      confirm-type="{{ confirmType }}"
+      confirm-hold="{{ confirmHold }}"
+      cursor-spacing="{{ cursorSpacing }}"
+      adjust-position="{{ adjustPosition }}"
+      selection-end="{{ selectionEnd }}"
+      selection-start="{{ selectionStart }}"
+      password="{{ password || type === 'password' }}"
+      onInput="onInput"
+      onBlur="onBlur"
+      onFocus="onFocus"
+      onConfirm="onConfirm"
+    />
+    <van-icon
+      a:if="{{ clearable && focused && value && !readonly }}"
+      size="16px"
+      name="clear"
+      class="van-field__clear-root van-field__icon-root"
+      onTouchStart="onClear"
+    />
+    <view class="van-field__icon-container" onTap="onClickIcon">
+      <van-icon
+        a:if="{{ rightIcon || icon }}"
+        size="16px"
+        name="{{ rightIcon || icon }}"
+        class="van-field__icon-root {{ iconClass }}"
+        custom-class="right-icon-class"
+      />
+      <slot name="right-icon"/>
+      <slot name="icon"/>
+    </view>
+    <view class="van-field__button">
+      <slot name="button"/>
+    </view>
+  </view>
+  <view a:if="{{ errorMessage }}" class="van-field__error-message {{ utils.bem('field__error', [errorMessageAlign, { disabled, error }]) }}">
+    {{ errorMessage }}
+  </view>
+</van-cell>

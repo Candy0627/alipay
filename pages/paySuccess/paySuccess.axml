@@ -1,0 +1,12 @@
+<view class="pay_container">
+  <view class="pay_success">
+    <image src="../../static/images/suc.png" class="pay_icon"/>
+    <text class="text t_title">{{goods_name}}  购买成功</text>
+    <text class="text t_code">兑换码：{{cdk}}</text>
+    <text class="text t_get">请联系客服进行兑换</text>
+    <!-- <navigator url="/pages/customer/customer" open-type="navigator">联系客服</navigator>
+        <navigator url="/pages/orders/orders" open-type="navigator">我的订单</navigator> -->
+    <view class="btn btn_customer" onTap="toCustomer">联系客服</view>
+    <view class="btn btn_orders" onTap="toOrders">我的订单</view>
+  </view>
+</view>

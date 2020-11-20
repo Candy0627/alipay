@@ -1,0 +1,26 @@
+<import-sjs from="../wxs/utils.sjs" name="utils"/>
+<view
+  class="{{ utils.bem('tabbar-item', { active }) }} custom-class"
+  style="color: {{ active ? activeColor : inactiveColor }}"
+  onTap="onClick"
+>
+  <view class="{{ utils.bem('tabbar-item__icon', { dot }) }}">
+    <van-icon
+      a:if="{{ icon }}"
+      name="{{ icon }}"
+      customStyle="display: block"
+    />
+    <block a:else>
+      <slot a:if="{{ active }}" name="icon-active"/>
+      <slot a:else name="icon"/>
+    </block>
+    <van-info
+      a:if="{{ info !== null }}"
+      info="{{ info }}"
+      custom-style="margin-top: 2px"
+    />
+  </view>
+  <view class="van-tabbar-item__text">
+    <slot/>
+  </view>
+</view>

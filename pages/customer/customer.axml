@@ -1,0 +1,15 @@
+<view class="container">
+  <view
+    class="cus_border flex-way"
+    a:for="{{customerList}}"
+    a:key="index"
+  >
+    <view class="flex-view-item cus_code">
+      <image src="{{item.img_url}}" class="cus_img"></image>
+    </view>
+    <view class="flex-view-item cus_text">
+      <view class="cus_title">{{item.contact_name}}:</view>
+      <view class="cus_desc">{{item.contact_des}}</view>
+    </view>
+  </view>
+</view>

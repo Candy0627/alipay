@@ -1,0 +1,30 @@
+<view
+  class="van-swipe-cell"
+  data-key="cell"
+  catchTap="onClick"
+  onTouchStart="startDrag"
+  catchTouchMove="{{ catchMove ? 'noop' : '' }}"
+  capture-bind:touchmove="onDrag"
+  catchTouchEnd="endDrag"
+  catchTouchCancel="endDrag"
+>
+  <view style="{{ wrapperStyle }}">
+    <view
+      a:if="{{ leftWidth }}"
+      class="van-swipe-cell__left"
+      data-key="left"
+      catchTap="onClick"
+    >
+      <slot name="left"/>
+    </view>
+    <slot/>
+    <view
+      a:if="{{ rightWidth }}"
+      class="van-swipe-cell__right"
+      data-key="right"
+      catchTap="onClick"
+    >
+      <slot name="right"/>
+    </view>
+  </view>
+</view>

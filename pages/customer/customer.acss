@@ -1,0 +1,48 @@
+/* required by usingComponents */
+.container{
+    padding-top: 35rpx;
+}
+.flex-way {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+.customer .flex-view-item{
+    flex:1;
+}
+.cus_code{
+    width: 256rpx;
+    height: 256rpx;
+    background: #aaaaaa;
+}
+.cus_img{
+    width: 256rpx;
+    height: 256rpx;
+    border: 1px solid #c8cfd4;
+    border-radius: 6rpx;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+.cus_border{
+    width: 555rpx;
+    height: 329rpx;
+    padding: 22rpx 40rpx 22rpx 40rpx;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #c8cfd4;
+}
+.cus_border:nth-child(2) {
+    margin-top: 20rpx;
+}
+.cus_text{
+    margin-left: 37rpx;
+}
+.cus_title{
+    color:#181818;
+    font-size:32rpx; 
+}
+.cus_desc{
+    margin-top: 8rpx;
+    color:#9b9b9b;
+    font-size:26rpx;
+}

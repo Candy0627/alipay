@@ -1,0 +1,17 @@
+<!--miniprogram/custom-tab-bar/index.axml-->
+<cover-view class="tab-bar" a:if="{{isShow}}">
+  <cover-view class="tab-bar-border"></cover-view>
+  <cover-view
+    a:for="{{list}}"
+    a:key="index"
+    class="tab-bar-item"
+    data-path="{{item.pagePath}}"
+    data-index="{{index}}"
+    onTap="switchTab"
+    style="background: {{selected === index ? selectedBgColor: bgColor}}"
+  >
+    <cover-view class="cover-view-text" style="color: {{selected === index ? selectedColor : color}}">
+			{{item.text}}
+		</cover-view>
+  </cover-view>
+</cover-view>

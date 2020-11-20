@@ -1,0 +1,14 @@
+<import-sjs from="../wxs/utils.sjs" name="utils"/>
+<view
+  class="custom-class {{ utils.bem('switch', { on: value === activeValue, disabled }) }}"
+  style="font-size: {{ size }}; {{ (checked ? activeColor : inactiveColor) ? 'background-color: ' + (checked ? activeColor : inactiveColor ) : '' }}"
+  onTap="onClick"
+>
+  <view class="van-switch__node node-class">
+    <van-loading
+      a:if="{{ loading }}"
+      size="50%"
+      custom-class="van-switch__loading"
+    />
+  </view>
+</view>
